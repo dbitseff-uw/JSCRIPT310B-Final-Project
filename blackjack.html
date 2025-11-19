@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html>
+  <head>
+    <title>Blackjack</title>
+    <style>
+      body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+      .form-group { margin: 10px 0; }
+      label { display: inline-block; width: 120px; }
+      input { padding: 5px; margin: 5px; }
+      button { padding: 8px 16px; margin: 5px; cursor: pointer; }
+      .error { color: red; font-size: 0.9em; }
+      #game-area { display: none; }
+      #stats { background: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0; }
+      .card-image { width: 100px; height: auto; margin: 5px; }
+      #player-hand, #dealer-hand { list-style: none; padding: 0; display: flex; flex-wrap: wrap; }
+      #player-hand li, #dealer-hand li { margin: 5px; }
+    </style>
+  </head>
+  <body>
+    <h1>Blackjack</h1>
+    
+    <!-- Form for player name -->
+    <div id="setup-area">
+      <h2>Start New Game</h2>
+      <form id="player-form">
+        <div class="form-group">
+          <label for="player-name">Player Name:</label>
+          <input type="text" id="player-name" name="playerName" required minlength="2" maxlength="20">
+          <span class="error" id="name-error"></span>
+        </div>
+        <button type="submit">Start Game</button>
+      </form>
+      <div id="stats">
+        <h3>Game Statistics</h3>
+        <p>Games Played: <span id="games-played">0</span></p>
+        <p>Wins: <span id="wins">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
+        <p>Ties: <span id="ties">0</span></p>
+      </div>
+    </div>
+
+    <!-- Game area -->
+    <div id="game-area">
+      <h2 id="player-name-display"></h2>
+      <ul id="player-hand"></ul>
+      
+      <h2>Dealer Hand</h2>
+      <ul id="dealer-hand"></ul>
+      
+      <div id="game-controls">
+        <button id="hit-btn">Hit</button>
+        <button id="stand-btn">Stand</button>
+      </div>
+      
+      <h2>Result</h2>
+      <h3 id="result"></h3>
+      
+      <button id="new-game-btn">New Game</button>
+    </div>
+
+    <script src="createCardDeck.js"></script>
+    <script src="blackjack.js"></script>
+  </body>
+</html>
