@@ -28,3 +28,33 @@ describe('Blackjack Tests', function() {
     expect(score.total).toBe(5);
   });
 });
+
+describe('dealerShouldDraw', () => {
+  it('should return false for 10, 9', () => {
+    expect(dealerShouldDraw([
+      { displayVal: '10', val: 10 },
+      { displayVal: '9', val: 9 }
+    ])).toBeFalse();
+  });
+  it('should return true for Ace, 6', () => {
+    expect(dealerShouldDraw([
+      { displayVal: 'Ace', val: 1 },
+      { displayVal: '6', val: 6 }
+    ])).toBeTrue();
+  });
+  it('should return false for 10, 6, Ace', () => {
+    expect(dealerShouldDraw([
+      { displayVal: '10', val: 10 },
+      { displayVal: '6', val: 6 },
+      { displayVal: 'Ace', val: 1 }
+    ])).toBeFalse();
+  });
+  it('should return true for 2, 4, 2, 5', () => {
+    expect(dealerShouldDraw([
+      { displayVal: '2', val: 2 },
+      { displayVal: '4', val: 4 },
+      { displayVal: '2', val: 2 },
+      { displayVal: '5', val: 5 }
+    ])).toBeTrue();
+  });
+});
