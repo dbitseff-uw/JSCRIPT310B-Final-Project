@@ -1,0 +1,11 @@
+body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #228B22; }
+.form-group { margin: 10px 0; }
+label { display: inline-block; width: 120px; }
+input { padding: 5px; margin: 5px; }
+button { padding: 8px 16px; margin: 5px; cursor: pointer; }
+.error { color: red; font-size: 0.9em; }
+#game-area { display: none; }
+#stats { background: #f0f0f0; padding: 10px; border-radius: 5px; margin: 10px 0; }
+.card-image { width: 100px; height: auto; margin: 5px; }
+#player-hand, #dealer-hand { list-style: none; padding: 0; display: flex; flex-wrap: wrap; }
+#player-hand li, #dealer-hand li { margin: 5px; }
